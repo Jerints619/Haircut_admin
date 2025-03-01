@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    padding: 0;
+    text-align: center;
+    background-image: url('Images/Login Page.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.brand-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    margin: 20px 0;
+}
+
+.welcome-section h2 {
+    font-size: 42px;
+    color: #00A3E1;
+    margin-bottom: 10px;
+}
+
+.welcome-section p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 2px solid #00A3E1;
+    border-radius: 8px;
+    padding: 0 15px;
+    background: #fff;
+    margin-top: 8px;
+}
+
+.input-with-icon span {
+    font-size: 20px;
+    color: #666;
+    margin-right: 10px;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.forgot-password {
+    text-align: right;
+    margin: 10px 0 25px;
+}
+
+.forgot-password a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.login-button {
+    width: 50%;
+    padding: 15px;
+    background: #00A3E1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-button:hover {
+    background: #0089be;
+}

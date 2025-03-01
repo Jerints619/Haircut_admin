@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: url('../Images/WhatsApp Image 2025-02-28 at 20.12.24_204f53af.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(45, 45, 45, 0.5) 100%);
+    z-index: -1;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Glass morphism effect - More transparent */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: rgba(45, 45, 45, 0.05);
+    padding: 20px;
+    box-shadow: none;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 500px;
+    height: 50px;
+    margin-right: 15px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: rgba(61, 61, 61, 0.1);
+}
+
+.nav-item.active {
+    background-color: rgba(176, 124, 131, 0.2);
+    color: white;
+}
+
+.nav-icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: rgba(45, 45, 45, 0.01);
+    border-radius: 20px;
+    margin: 20px;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: -3%;
+}
+
+.header h1 {
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Stats Cards Styles */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background-color: rgba(61, 61, 61, 0.01);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-card.appointments {
+    background: linear-gradient(to right, rgba(214, 75, 20, 0.2), rgba(214, 75, 20, 0.2));
+}
+
+.stat-card.clients {
+    background: linear-gradient(to right, rgba(143, 235, 160, 0.26), rgba(0, 255, 242, 0.65));
+}
+
+.stat-card.stylists {
+    background: linear-gradient(to right, rgba(235, 143, 181, 0.26), rgba(255, 166, 0, 0.65));
+}
+
+.stat-card.services {
+    background: linear-gradient(to right, rgba(179, 143, 235, 0.26), rgba(99, 0, 255, 0.65));
+}
+
+.stat-info h2 {
+    font-size: 40px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.stat-info p {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.stat-icon {
+    font-size: 24px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.01);
+    
+}
+
+/* Chart and Appointments Container */
+.chart-appointments-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Chart Section Styles */
+.chart-section {
+    background-color: rgba(61, 61, 61, 0.01);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.date-range {
+    background-color: rgba(77, 77, 77, 0.05);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 20px;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.chart-section h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Upcoming Appointments Styles */
+.upcoming-appointments {
+    background-color: rgba(239, 68, 68, 0.3); /* #EF4444 with 30% opacity */
+    padding: 20px;
+    border-radius: 15px;
+    height: 100%;
+    overflow-y: auto;
+    max-height: 500px;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.upcoming-appointments::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.upcoming-appointments h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.appointment-list {
+    display: grid;
+    gap: 15px;
+}
+
+.appointment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: rgba(61, 61, 61, 0.01);
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.appointment-info h4 {
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.appointment-info p {
+    color: #FFD700;
+    font-size: 14px;
+}
+
+.appointment-time {
+    color: #ffffff;
+    font-weight: bold;
+} 

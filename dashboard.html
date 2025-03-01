@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rising Beauty Studio - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <img src="Images/Group 3465090.png" alt="Rising Beauty Studio" class="logo">
+                <!-- <span class="brand-name">Rising Beauty Studio</span> -->
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item active">
+                    <span class="nav-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="appointment.html" class="nav-item">
+                    <span class="nav-icon">📅</span>
+                    Appointment Management
+                </a>
+                <a href="staff.html" class="nav-item">
+                    <span class="nav-icon">👥</span>
+                    Staff Management
+                </a>
+                <a href="services.html" class="nav-item">
+                    <span class="nav-icon">💇</span>
+                    Services & Pricing
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Overview</h1>
+                <div class="user-profile">
+                    <img src="Images/User.png" alt="Profile" class="profile-pic">
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-container">
+                <div class="stat-card appointments">
+                    <div class="stat-info">
+                        <h2>900+</h2>
+                        <p>Appointments</p>
+                    </div>
+                    <div class="stat-icon">
+                        <img src="Images/514936_calendar_numbers_appointment_schedule_iconfinder.png" alt="Appointments" class="appointment-icon">
+                    </div>
+                </div>
+                
+                <div class="stat-card clients">
+                    <div class="stat-info">
+                        <h2>1000+</h2>
+                        <p>Clients</p>
+                    </div>
+                    <div class="stat-icon">
+                        <img src="Images/61816_business_buyers_clients_users_iconfinder.png"" alt="Clients" class="client-icon">
+                    </div>
+                </div>
+
+                <div class="stat-card stylists">
+                    <div class="stat-info">
+                        <h2>30</h2>
+                        <p>Stylists</p>
+                    </div>
+                    <div class="stat-icon">
+                        <img src="Images/image1 1.png"" alt="Stylists" class="stylist-icon">
+                    </div>
+                </div>
+
+                <div class="stat-card services">
+                    <div class="stat-info">
+                        <h2>50+</h2>
+                        <p>Services</p>
+                    </div>
+                    <div class="stat-icon">
+                        <img src="Images/image 1.png"" alt="Services" class="service-icon">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart and Appointments Container -->
+            <div class="chart-appointments-container">
+                <!-- Chart Section -->
+                <div class="chart-section">
+                    <div class="date-range">
+                        <span>Jan 20, 2024 - Apr 09, 2024</span>
+                    </div>
+                    <h3>Appointments scheduled throughout the day</h3>
+                    <canvas id="appointmentChart"></canvas>
+                </div>
+
+                <!-- Upcoming Appointments -->
+                <div class="upcoming-appointments">
+                    <h3>Upcoming appointments</h3>
+                    <div class="appointment-list">
+                        <div class="appointment-item">
+                            <div class="appointment-info">
+                                <h4>Alberto Raya</h4>
+                                <p>Hair Styling</p>
+                            </div>
+                            <div class="appointment-time">10:30 - 11:00</div>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="appointment-info">
+                                <h4>Alberto K</h4>
+                                <p>Haircut</p>
+                            </div>
+                            <div class="appointment-time">11:30 - 12:00</div>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="appointment-info">
+                                <h4>Alberto G</h4>
+                                <p>Coloring</p>
+                            </div>
+                            <div class="appointment-time">13:30 - 14:00</div>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="appointment-info">
+                                <h4>Alberto H</h4>
+                                <p>Massage</p>
+                            </div>
+                            <div class="appointment-time">15:00 - 15:30</div>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="appointment-info">
+                                <h4>Alberto T</h4>
+                                <p>Hair Styling</p>
+                            </div>
+                            <div class="appointment-time">16:30 - 17:00</div>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="appointment-info">
+                                <h4>Alberto U</h4>
+                                <p>Haircut</p>
+                            </div>
+                            <div class="appointment-time">17:30 - 18:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chart initialization
+        const ctx = document.getElementById('appointmentChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'],
+                datasets: [{
+                    data: [15, 20, 20, 20, 8, 12, 9, 13, 10],
+                    backgroundColor: '#8B5CF6',
+                    borderRadius: 5,
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 20,
+                        ticks: {
+                            stepSize: 5,
+                            color: '#a0a0a0'
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: '#a0a0a0'
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

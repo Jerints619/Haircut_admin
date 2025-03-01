@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rising Beauty Studio - Appointment Management</title>
+    <link rel="stylesheet" href="appointment.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <img src="Images/Group 3465090.png" alt="Rising Beauty Studio" class="logo">
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="appointment.html" class="nav-item active">
+                    <span class="nav-icon">📅</span>
+                    Appointment Management
+                </a>
+                <a href="staff.html" class="nav-item">
+                    <span class="nav-icon">👥</span>
+                    Staff Management
+                </a>
+                <a href="services.html" class="nav-item">
+                    <span class="nav-icon">💇</span>
+                    Services & Pricing
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            
+            <h2>Appointment Management</h2>
+            <br>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" placeholder="Search appointments..." class="search-input">
+            </div>
+
+            <!-- Appointments Table -->
+            <div class="appointments-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Appointment ID</th>
+                            <th>Clients</th>
+                            <th>Contact Details</th>
+                            <th>Email Address</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Message</th>
+                            <th>Staff Assigned</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>Brana Maitam Roh</td>
+                            <td>+1 12345678</td>
+                            <td>test@gmail.com</td>
+                            <td>25-02-2025</td>
+                            <td>10:00 - 10:30</td>
+                            <td>I want haircut</td>
+                            <td>
+                                <select class="staff-select">
+                                    <option value="">Select Staff</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="status-select" onchange="this.setAttribute('value', this.value)">
+                                    <option value="upcoming">Upcoming</option>
+                                    <option value="in-progress">In-Progress</option>
+                                    <option value="completed">Completed</option>
+                                </select>
+                            </td>
+                            <td class="actions">
+                                <button class="btn-submit">SUBMIT</button>
+                                <button class="btn-reschedule">RE-SCHEDULE</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>Jordyn Dokidis</td>
+                            <td>+1 12345678</td>
+                            <td>test@gmail.com</td>
+                            <td>26-02-2025</td>
+                            <td>10:00 - 10:30</td>
+                            <td>I want haircut</td>
+                            <td>
+                                <select class="staff-select">
+                                    <option value="">Select Staff</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="status-select" onchange="this.setAttribute('value', this.value)">
+                                    <option value="upcoming">Upcoming</option>
+                                    <option value="in-progress">In-Progress</option>
+                                    <option value="completed">Completed</option>
+                                </select>
+                            </td>
+                            <td class="actions">
+                                <button class="btn-submit">SUBMIT</button>
+                                <button class="btn-reschedule">RE-SCHEDULE</button>
+                            </td>
+                        </tr>
+                        <!-- Add more rows as per the image -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
