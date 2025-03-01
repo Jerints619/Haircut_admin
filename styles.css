@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Geist', 'Arial', sans-serif;
 }
 
 body {
@@ -119,4 +119,57 @@ body {
 
 .login-button:hover {
     background: #0089be;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .login-container {
+        padding: 20px;
+    }
+
+    .input-with-icon {
+        width: 100% !important;
+    }
+
+    .login-button {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .login-container {
+        padding: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .input-with-icon {
+        padding: 0 10px;
+    }
+
+    .input-with-icon input {
+        padding: 12px 0;
+        font-size: 14px;
+    }
+
+    .login-button {
+        width: 90%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    div[style*="margin-left: 49%"] {
+        margin-left: 0 !important;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    div[style*="margin-left: 50%"] {
+        margin-left: 0 !important;
+        width: 100%;
+        height: auto !important;
+        margin-bottom: 30px;
+    }
 }

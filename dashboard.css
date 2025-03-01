@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Geist', 'Arial', sans-serif;
 }
 
 body {
@@ -274,4 +274,78 @@ body::before {
 .appointment-time {
     color: #ffffff;
     font-weight: bold;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .chart-appointments-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .main-content {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .logo {
+        width: 200px;
+        height: 40px;
+    }
+
+    .stats-container {
+        gap: 15px;
+    }
+
+    .stat-info h2 {
+        font-size: 28px;
+    }
+
+    .stat-info p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .appointment-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .date-range {
+        font-size: 12px;
+    }
 } 

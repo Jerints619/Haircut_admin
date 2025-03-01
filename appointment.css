@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Geist', 'Arial', sans-serif;
 }
 
 body {
@@ -88,7 +88,7 @@ body::before {
 .main-content {
     flex: 1;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgb(255, 255, 255);
     border-radius: 20px;
     margin: 20px;
     overflow-x: hidden; /* Hide horizontal overflow */
@@ -229,41 +229,41 @@ tr td:last-child {
 }
 
 .status.upcoming {
-    background-color: #e3f2fd;
+    background-color: #e3f2fd00;
     color: #1976d2;
 }
 
 .status.completed {
-    background-color: #e8f5e9;
+    background-color: #e8f5e900;
     color: #2e7d32;
 }
 
 .status.cancelled {
-    background-color: #ffebee;
+    background-color: #ffebee00;
     color: #c62828;
 }
 
-/* Button Styles */
-.actions {
-    display: flex;
-    gap: 10px;
+/* Button and Select Styles - Common Properties */
+.btn-submit, 
+.btn-reschedule,
+.staff-select,
+.status-select {
+    width: 120px;
+    height: 35px;
+    font-size: 13px;
+    border: none;
+    border-radius: 4%;
+    cursor: pointer;
 }
 
-.btn-submit, .btn-reschedule {
-    width: 80px;  /* Fixed width */
-    height: 28px;
-    font-size: 11px;
-    font-weight: 500;
-    border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border: none;
-    cursor: pointer;
-    color: transparent;  /* Hide text */
+/* Submit and Reschedule Button Styles */
+.btn-submit, 
+.btn-reschedule {
+    color: transparent;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;  /* Contain full image */
-    padding: 0;  /* Remove padding */
+    background-size: contain;
+    padding: 0;
 }
 
 .btn-submit {
@@ -276,22 +276,16 @@ tr td:last-child {
 
 /* Staff Select Styles */
 .staff-select {
-    width: 100%;
-    padding: 6px;
-    border: 1px solid #ddd;
-    border-radius: 20px;  /* Increased border radius to match buttons */
-    background-color: rgb(188, 187, 187);
+    padding: 0 30px 0 10px;
+    background-color: rgba(255, 255, 255, 0);
     color: rgb(33, 31, 31);
-    cursor: pointer;
-    font-size: 13px;
-    appearance: none;  /* Remove default dropdown arrow */
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 16px;
-    padding-right: 30px;  /* Space for the custom arrow */
 }
 
 .staff-select:focus {
@@ -300,23 +294,17 @@ tr td:last-child {
     box-shadow: 0 0 0 2px rgba(0, 163, 225, 0.2);
 }
 
-/* Status Styles */
+/* Status Select Styles */
 .status-select {
-    width: 120px;
-    padding: 4px 8px;
-    border-radius: 4px;
+    padding: 0 30px 0 10px;
     font-weight: 500;
-    font-size: 12px;
-    border: none;
-    cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
-    background-position: right 8px center;
-    background-size: 12px;
-    padding-right: 24px;
+    background-position: right 10px center;
+    background-size: 16px;
 }
 
 /* Status select background colors when option is selected */
@@ -338,4 +326,66 @@ tr td:last-child {
 .status-select:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(0, 163, 225, 0.2);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .main-content {
+        margin: 0;
+        border-radius: 0;
+        max-width: 100%;
+    }
+
+    .logo {
+        width: 200px;
+        height: 40px;
+    }
+
+    .search-input {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    .search-input {
+        padding: 10px 20px 10px 40px;
+        background-size: 16px;
+        background-position: 12px center;
+    }
+
+    .appointments-table {
+        margin: 0;
+        padding: 0;
+    }
+
+    table {
+        min-width: 800px;
+    }
+
+    th, td {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .btn-submit, 
+    .btn-reschedule,
+    .staff-select,
+    .status-select {
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
+    }
 } 
